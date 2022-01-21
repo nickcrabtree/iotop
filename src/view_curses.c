@@ -349,7 +349,11 @@ static inline void view_curses(struct xxxid_stats_arr *cs,struct xxxid_stats_arr
 		maxcmdline-=column_width[SORT_BY_SWAPIN];
 	if (!config.f.hideio)
 		maxcmdline-=column_width[SORT_BY_IO];
-	gr_width=maxcmdline/4;
+	if (maxcmdline > 60) {
+		gr_width = maxcmdline - 20;
+	} else {
+		gr_width = maxcmdline/4;
+	}
 	if (gr_width<5)
 		gr_width=5;
 	if (gr_width>HISTORY_POS)
