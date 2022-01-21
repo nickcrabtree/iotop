@@ -67,7 +67,7 @@ extern params_t params;
 extern int maxpidlen;
 
 
-#define HISTORY_POS 60
+#define HISTORY_POS 600
 #define HISTORY_CNT (HISTORY_POS*2)
 
 struct xxxid_stats_arr {
